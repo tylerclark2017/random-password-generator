@@ -10,28 +10,28 @@ var numbers = "0123456789";
 var specialCharacters = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
 var password = "";
 
-var characterSet = ";"
+var characterSet = ""
 if (includeUppercase) {
   characterSet += uppercaseLetters;
-  if (includeLowercase) {
-    characterSet += lowercaseLetters;
-  }
-  if (includeNumbers) {
-    characterSet += numbers;
-  }
-  if (includeSpecialCharacters) {
-    characterSet +=specialCharacters;
-  }
+}
+if (includeLowercase) {
+  characterSet += lowercaseLetters;
+}
+if (includeNumbers) {
+  characterSet += numbers;
+}
+if (includeSpecialCharacters) {
+  characterSet += specialCharacters;
 }
 
-for (var i = 0; i < passwordLength; i++) {
-  var randomIndex = Math.floor (Math.random() * characterSet.passwordLength);
-  password += characterSet[randomIndex];
-  {
-    return password;
+function generatePassword() {
+  var password = "";
+  for (var i = 0; i < passwordLength; i++) {
+    var randomIndex = Math.floor(Math.random() * characterSet.length);
+    password += characterSet[randomIndex];
   }
+  return password;
 }
-
 
 console.log(password);
 
