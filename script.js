@@ -25,6 +25,14 @@ if (includeNumbers) {
 if (includeSpecialCharacters) {
   characterSet += specialCharacters;
 }
+// The if statement included here is used to ensure that if the password length is less than 8 or over 128 characters, an error message will pop up prompting the user to change their parameters for their desired randomly generated password.  
+if (passwordLength >= 8 && passwordLength <= 128) {
+  var password = generatePassword(passwordLength);
+  alert("Your password is: " + password);
+} else {
+  
+  alert("Invalid password length. Please enter a length between 8 and 128 characters.");
+}
 //The function here is used to set the length conditions for the password.
 function generatePassword() {
   var password = "";
