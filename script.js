@@ -1,4 +1,5 @@
 // Assignment code here
+//This code is used to store the variables necessary to ultimately create the randomly generated password.
 var passwordLength = parseInt(prompt("Enter the length of the password:"));
 var includeUppercase = confirm("Include uppercase letters?");
 var includeLowercase = confirm("Include lowercase letters?");
@@ -11,6 +12,7 @@ var specialCharacters = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
 var password = "";
 
 var characterSet = ""
+// The if statements here are used to create conditional statements for the code to follow depending on which characters the user wishes to use for their randomly generated password.
 if (includeUppercase) {
   characterSet += uppercaseLetters;
 }
@@ -23,7 +25,7 @@ if (includeNumbers) {
 if (includeSpecialCharacters) {
   characterSet += specialCharacters;
 }
-
+//The function here is used to set the length conditions for the password.
 function generatePassword() {
   var password = "";
   for (var i = 0; i < passwordLength; i++) {
@@ -32,7 +34,7 @@ function generatePassword() {
   }
   return password;
 }
-
+// This console.log is used to finally generate the password for the user once all of the conditions have been met. 
 console.log(password);
 
 // Get references to the #generate element
